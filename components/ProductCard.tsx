@@ -24,7 +24,7 @@ export function ProductCard({ product, onBuy }: ProductCardProps) {
       <h2 className="mt-4 text-lg font-bold">{product.name}</h2>
       <p className="text-sm text-gray-600">{product.description}</p>
       <div className="mt-2 flex items-center justify-between">
-        <span className="text-base font-semibold">${product.price}</span>
+        <span className="text-base font-semibold">€{product.price}</span>
         <Button onClick={() => onBuy(product.id)} className="ml-2">
           Buy Now
         </Button>

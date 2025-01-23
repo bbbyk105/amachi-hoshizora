@@ -8,7 +8,7 @@ const products: Product[] = [
       "A 500ml version of Japanese sake brewed at the foot of Mt. Fuji.",
     price: 65,
     image: {
-      url: "/public/amachi-500ml.png",
+      url: "/amachi-500ml.png",
       alt: "AMACHIHOSHISORA 500ml",
       width: 500,
       height: 500,
@@ -21,7 +21,7 @@ const products: Product[] = [
       "A 720ml version of Japanese sake brewed at the foot of Mt. Fuji.",
     price: 80,
     image: {
-      url: "/public/amachi-720ml.png",
+      url: "/amachi-720ml.png",
       alt: "AMACHIHOSHISORA 720ml",
       width: 500,
       height: 500,
@@ -33,7 +33,7 @@ const products: Product[] = [
     description: "This unique sake cup changes color.",
     price: 25,
     image: {
-      url: "/public/marumo-1.png",
+      url: "/marumo-1.png",
       alt: "marumo-1cup",
       width: 500,
       height: 500,
@@ -45,7 +45,7 @@ const products: Product[] = [
     description: "Buy 4 and get 25% off!",
     price: 80,
     image: {
-      url: "/public/marumo-4.png",
+      url: "/marumo-4.png",
       alt: "marumo-4cups",
       width: 500,
       height: 500,
