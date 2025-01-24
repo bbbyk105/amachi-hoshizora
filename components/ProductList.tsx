@@ -5,14 +5,13 @@ import { ProductCard } from "./ProductCard";
 
 interface ProductListProps {
   products: Product[];
-  onBuy: (productId: number) => void;
 }
 
-export function ProductList({ products, onBuy }: ProductListProps) {
+export function ProductList({ products }: ProductListProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} onBuy={onBuy} />
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

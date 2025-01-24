@@ -2,14 +2,16 @@
 
 import Image from "next/image";
 import { Product } from "@/types/products";
-import { Button } from "@/components/ui/button";
+import { useCart } from "@/store/cart";
+import { Button } from "@/components/ui/button"; // shadcn/ui想定
 
 interface ProductCardProps {
   product: Product;
-  onBuy: (productId: number) => void;
 }
 
-export function ProductCard({ product, onBuy }: ProductCardProps) {
+export function ProductCard({ product }: ProductCardProps) {
+  const { addToCart } = useCart();
+
   return (
     <div className="border rounded-lg p-4 shadow-sm">
       <div className="relative w-full h-64">
@@ -25,9 +27,7 @@ export function ProductCard({ product, onBuy }: ProductCardProps) {
       <p className="text-sm text-gray-600">{product.description}</p>
       <div className="mt-2 flex items-center justify-between">
         <span className="text-base font-semibold">€{product.price}</span>
-        <Button onClick={() => onBuy(product.id)} className="ml-2">
-          Buy Now
-        </Button>
+        <Button onClick={() => addToCart(product, 1)}>Add to Cart</Button>
       </div>
     </div>
   );
