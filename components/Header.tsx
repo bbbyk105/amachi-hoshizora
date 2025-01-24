@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCart } from "@/store/cart";
+import { ShoppingCart } from "lucide-react";
 
 export function Header() {
   const { getTotalQuantity } = useCart();
@@ -13,7 +14,9 @@ export function Header() {
           shopping
         </Link>
         <Link href="/cart" className="relative">
-          <span>Cart</span>
+          <span>
+            <ShoppingCart />
+          </span>
           {/* カートに入っている個数をバッジ表示 */}
           {getTotalQuantity() > 0 && (
             <span className="absolute top-[-8px] right-[-10px] bg-red-500 text-white text-xs rounded-full px-2">

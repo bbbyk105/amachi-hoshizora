@@ -1,6 +1,7 @@
 // app/cart/page.tsx
 "use client";
 
+import { Icon } from "@/components/Icon";
 import { useCart } from "@/store/cart";
 import Image from "next/image";
 import { useState } from "react";
@@ -79,7 +80,11 @@ export default function CartPage() {
                 className="bg-blue-600 text-white px-4 py-2 rounded"
                 disabled={loading}
               >
-                {loading ? "Loading..." : "Proceed to Checkout"}
+                {loading ? (
+                  <Icon.spinner className="mr-2 animate-spin" />
+                ) : (
+                  "Proceed to Checkout"
+                )}
               </button>
             </div>
           </div>
