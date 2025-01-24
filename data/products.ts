@@ -42,7 +42,7 @@ const products: Product[] = [
   {
     id: 4,
     name: "丸モ高木陶器 Marumo Takagi 4cups",
-    description: "Buy 4 and get 25% off!",
+    description: "Buy 4 and get 20% off!",
     price: 80,
     image: {
       url: "/marumo-4.png",
