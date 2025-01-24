@@ -36,8 +36,8 @@ export async function POST(request: Request) {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "http://localhost:3000/success",
-      cancel_url: "http://localhost:3000/cancel",
+      success_url: "https://amachi-hoshizora.vercel.app/success",
+      cancel_url: "https://amachi-hoshizora.vercel.app/cancel",
     });
 
     // フロントエンドにCheckout URLを返す
