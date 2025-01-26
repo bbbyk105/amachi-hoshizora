@@ -51,6 +51,19 @@ const products: Product[] = [
       height: 500,
     },
   },
+
+  {
+    id: 5,
+    name: "丸モ高木陶器 Marumo Takagi 9cups and wood box",
+    description: "This unique sake cup and Japanese traditional wood box",
+    price: 300,
+    image: {
+      url: "/marumo-9.png",
+      alt: "marumo-9cups",
+      width: 500,
+      height: 500,
+    },
+  },
 ];
 
 export default products;
