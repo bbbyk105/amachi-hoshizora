@@ -51,7 +51,6 @@ const products: Product[] = [
       height: 500,
     },
   },
-
   {
     id: 5,
     name: "丸モ高木陶器 Marumo Takagi 9cups and wood box",
@@ -60,6 +59,31 @@ const products: Product[] = [
     image: {
       url: "/marumo-9.png",
       alt: "marumo-9cups",
+      width: 500,
+      height: 500,
+    },
+  },
+  {
+    id: 6,
+    name: "丸モ高木陶器 おちょこ MarumoTakagi Ochoko",
+    description:
+      "An ochoko is a small cup used for drinking sake in Japan. It’s usually made of ceramic or glass.",
+    price: 10,
+    image: {
+      url: "/ochoko.png",
+      alt: "ochoko",
+      width: 500,
+      height: 500,
+    },
+  },
+  {
+    id: 7,
+    name: "丸モ高木陶器 豆皿 MarumoTakagi Mamezara",
+    description: "Maruzara is usually used under the Ochoko",
+    price: 10,
+    image: {
+      url: "/mamezara.png",
+      alt: "mamezara",
       width: 500,
       height: 500,
     },
