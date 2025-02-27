@@ -8,11 +8,8 @@ export function Header() {
   const { getTotalQuantity } = useCart();
 
   return (
-    <header className="w-full p-4 shadow">
-      <nav className="container mx-auto flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold">
-          shopping
-        </Link>
+    <header className="w-full p-4 shadow  z-[2000]">
+      <nav className="container mx-auto flex items-center justify-end">
         <Link href="/cart" className="relative">
           <span>
             <ShoppingCart />
