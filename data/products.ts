@@ -88,6 +88,18 @@ const products: Product[] = [
       height: 500,
     },
   },
+  {
+    id: 8,
+    name: "Euro Shipping",
+    description: "Shipping for buy on the Internet",
+    price: 30,
+    image: {
+      url: "/free.png",
+      alt: "shipping",
+      width: 500,
+      height: 500,
+    },
+  },
 ];
 
 export default products;
