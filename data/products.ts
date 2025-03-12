@@ -91,7 +91,7 @@ const products: Product[] = [
   {
     id: 8,
     name: "Euro Shipping",
-    description: "Shipping for buy on the Internet",
+    description: "When purchasing online, please add this",
     price: 30,
     image: {
       url: "/free.png",
