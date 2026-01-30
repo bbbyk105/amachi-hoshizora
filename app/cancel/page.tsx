@@ -8,11 +8,17 @@ export default function CancelPage() {
         Payment cancelled
       </h1>
       <p className="mt-3 text-muted-foreground">
-        Your payment was cancelled or an error occurred.
+        Your payment was cancelled or an error occurred. Your cart has been kept
+        so you can try again or change your order.
       </p>
-      <Button asChild variant="outline" className="mt-8">
-        <Link href="/cart">Back to cart</Link>
-      </Button>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+        <Button asChild>
+          <Link href="/cart">Back to cart</Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link href="/">Continue shopping</Link>
+        </Button>
+      </div>
     </div>
   );
 }

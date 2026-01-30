@@ -70,8 +70,8 @@ export async function POST(request: Request) {
       line_items: lineItems,
       mode: "payment",
       locale: "en",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://amachi-hoshisora.vercel.app"}/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://amachi-hoshisora.vercel.app"}/cancel`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://amachi-hoshizora.vercel.app"}/success`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://amachi-hoshizora.vercel.app"}/cancel`,
       // Collect shipping address (required for delivery)
       shipping_address_collection: {
         allowed_countries: [...EUROPEAN_COUNTRIES],
