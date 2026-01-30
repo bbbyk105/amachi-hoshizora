@@ -27,79 +27,81 @@ const products: Product[] = [
       height: 500,
     },
   },
-  {
-    id: 3,
-    name: "丸モ高木陶器 Marumo Takagi 1cup",
-    description: "This unique sake cup changes color.",
-    price: 25,
-    image: {
-      url: "/marumo-1.png",
-      alt: "marumo-1cup",
-      width: 500,
-      height: 500,
-    },
-  },
-  {
-    id: 4,
-    name: "丸モ高木陶器 Marumo Takagi 4cups",
-    description: "Buy 4 and get 20% off!",
-    price: 80,
-    image: {
-      url: "/marumo-4.png",
-      alt: "marumo-4cups",
-      width: 500,
-      height: 500,
-    },
-  },
-  {
-    id: 5,
-    name: "丸モ高木陶器 Marumo Takagi 9cups and wood box",
-    description: "This unique sake cup and Japanese traditional wood box",
-    price: 300,
-    image: {
-      url: "/marumo-9.png",
-      alt: "marumo-9cups",
-      width: 500,
-      height: 500,
-    },
-  },
-  {
-    id: 6,
-    name: "丸モ高木陶器 おちょこ MarumoTakagi Ochoko",
-    description:
-      "An ochoko is a small cup used for drinking sake in Japan. It’s usually made of ceramic or glass.",
-    price: 10,
-    image: {
-      url: "/ochoko.png",
-      alt: "ochoko",
-      width: 500,
-      height: 500,
-    },
-  },
-  {
-    id: 7,
-    name: "丸モ高木陶器 豆皿 MarumoTakagi Mamezara",
-    description: "Maruzara is usually used under the Ochoko",
-    price: 10,
-    image: {
-      url: "/mamezara.png",
-      alt: "mamezara",
-      width: 500,
-      height: 500,
-    },
-  },
-  {
-    id: 8,
-    name: "Euro Shipping",
-    description: "When purchasing online, please add this",
-    price: 30,
-    image: {
-      url: "/free.png",
-      alt: "shipping",
-      width: 500,
-      height: 500,
-    },
-  },
+  // 丸モ高木陶器 Marumo Takagi — commented out (not displayed)
+  // {
+  //   id: 3,
+  //   name: "丸モ高木陶器 Marumo Takagi 1cup",
+  //   description: "This unique sake cup changes color.",
+  //   price: 25,
+  //   image: {
+  //     url: "/marumo-1.png",
+  //     alt: "marumo-1cup",
+  //     width: 500,
+  //     height: 500,
+  //   },
+  // },
+  // {
+  //   id: 4,
+  //   name: "丸モ高木陶器 Marumo Takagi 4cups",
+  //   description: "Buy 4 and get 20% off!",
+  //   price: 80,
+  //   image: {
+  //     url: "/marumo-4.png",
+  //     alt: "marumo-4cups",
+  //     width: 500,
+  //     height: 500,
+  //   },
+  // },
+  // {
+  //   id: 5,
+  //   name: "丸モ高木陶器 Marumo Takagi 9cups and wood box",
+  //   description: "This unique sake cup and Japanese traditional wood box",
+  //   price: 300,
+  //   image: {
+  //     url: "/marumo-9.png",
+  //     alt: "marumo-9cups",
+  //     width: 500,
+  //     height: 500,
+  //   },
+  // },
+  // {
+  //   id: 6,
+  //   name: "丸モ高木陶器 おちょこ MarumoTakagi Ochoko",
+  //   description:
+  //     "An ochoko is a small cup used for drinking sake in Japan. It's usually made of ceramic or glass.",
+  //   price: 10,
+  //   image: {
+  //     url: "/ochoko.png",
+  //     alt: "ochoko",
+  //     width: 500,
+  //     height: 500,
+  //   },
+  // },
+  // {
+  //   id: 7,
+  //   name: "丸モ高木陶器 豆皿 MarumoTakagi Mamezara",
+  //   description: "Maruzara is usually used under the Ochoko",
+  //   price: 10,
+  //   image: {
+  //     url: "/mamezara.png",
+  //     alt: "mamezara",
+  //     width: 500,
+  //     height: 500,
+  //   },
+  // },
+  // Euro Shipping: 30 EUR is added automatically at checkout (Europe only)
+  // {
+  //   id: 8,
+  //   name: "Euro Shipping",
+  //   description: "When purchasing online, please add this",
+  //   price: 30,
+  //   image: {
+  //     url: "/free.png",
+  //     alt: "shipping",
+  //     width: 500,
+  //     height: 500,
+  //   },
+  // },
 ];
 
 export default products;

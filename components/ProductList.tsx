@@ -9,10 +9,15 @@ interface ProductListProps {
 
 export function ProductList({ products }: ProductListProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <ul
+      className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4"
+      role="list"
+    >
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <li key={product.id}>
+          <ProductCard product={product} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

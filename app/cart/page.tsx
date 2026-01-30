@@ -1,7 +1,8 @@
-// app/cart/page.tsx
 "use client";
 
+import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { Button } from "@/components/ui/button";
 import { useCart } from "@/store/cart";
 import Image from "next/image";
 import { useState } from "react";
@@ -17,7 +18,6 @@ export default function CartPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          // カートアイテムを { id, quantity } だけ送る（改ざん対策）
           items: cartItems.map((item) => ({
             id: item.product.id,
             quantity: item.quantity,
@@ -25,67 +25,100 @@ export default function CartPage() {
         }),
       });
       if (!res.ok) throw new Error("Checkout session creation failed");
-
       const data = await res.json();
-      window.location.href = data.url; // リダイレクト
+      window.location.href = data.url;
     } catch (error) {
       console.error(error);
-      alert("Failed to initiate checkout.");
+      alert("Failed to start checkout.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+    <div className="container-narrow py-8 sm:py-10 lg:py-12">
+      <h1 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+        Cart
+      </h1>
       {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <div className="mt-10 rounded-xl border border-border bg-card p-8 text-center sm:p-12">
+          <p className="text-muted-foreground">Your cart is empty.</p>
+          <Button asChild variant="outline" className="mt-6">
+            <Link href="/">View products</Link>
+          </Button>
+        </div>
       ) : (
         <>
-          <ul className="space-y-4">
+          <ul className="mt-8 space-y-4 sm:mt-10 sm:space-y-6" role="list">
             {cartItems.map((item) => (
-              <li key={item.product.id} className="flex items-center gap-4">
-                <Image
-                  src={item.product.image.url}
-                  alt={item.product.image.alt}
-                  width={100}
-                  height={100}
-                  className="object-cover"
-                />
-                <div>
-                  <h2 className="font-semibold">{item.product.name}</h2>
-                  <p>
-                    € {item.product.price} x {item.quantity} = €{" "}
+              <li
+                key={item.product.id}
+                className="flex flex-col gap-4 rounded-xl border border-border bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:gap-6 sm:p-5"
+              >
+                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-muted sm:h-28 sm:w-28">
+                  <Image
+                    src={item.product.image.url}
+                    alt={item.product.image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="112px"
+                  />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h2 className="font-semibold text-foreground sm:text-lg">
+                    {item.product.name}
+                  </h2>
+                  <p className="mt-0.5 text-sm text-muted-foreground">
+                    €{item.product.price} × {item.quantity} = €
                     {item.product.price * item.quantity}
                   </p>
-                  <button
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="mt-2 text-destructive hover:bg-destructive/10 hover:text-destructive"
                     onClick={() => removeFromCart(item.product.id)}
-                    className="text-sm text-red-500 mt-1"
                   >
                     Remove
-                  </button>
+                  </Button>
                 </div>
               </li>
             ))}
           </ul>
-          <div className="mt-8">
-            <p className="text-lg font-semibold">Total: € {getTotalPrice()}</p>
-            <div className="flex gap-4 mt-4">
-              <button onClick={clearCart} className="border px-4 py-2 rounded">
-                Clear Cart
-              </button>
-              <button
-                onClick={handleCheckout}
-                className="bg-blue-600 text-white px-4 py-2 rounded"
-                disabled={loading}
-              >
-                {loading ? (
-                  <Icon.spinner className="mr-2 animate-spin" />
-                ) : (
-                  "Proceed to Checkout"
-                )}
-              </button>
+          <div className="mt-8 flex flex-col gap-2 border-t border-border pt-8 sm:mt-10">
+            <p className="text-muted-foreground text-sm">
+              Subtotal: €{getTotalPrice()} · Shipping (€30) will be added at
+              checkout. We ship to Europe only.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+              <p className="text-lg font-semibold tabular-nums text-foreground">
+                Total at checkout: €{getTotalPrice() + 30}
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <Button
+                  variant="outline"
+                  onClick={clearCart}
+                  className="order-2 sm:order-1"
+                >
+                  Clear cart
+                </Button>
+                <Button
+                  onClick={handleCheckout}
+                  disabled={loading}
+                  className="order-1 sm:order-2"
+                >
+                  {loading ? (
+                    <>
+                      <Icon.spinner
+                        className="h-4 w-4 animate-spin"
+                        aria-hidden
+                      />
+                      Processing…
+                    </>
+                  ) : (
+                    "Proceed to checkout"
+                  )}
+                </Button>
+              </div>
             </div>
           </div>
         </>
